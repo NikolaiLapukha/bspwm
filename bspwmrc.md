@@ -5,6 +5,7 @@ polybar example &
 nitrogen --restore &
 dunst &
 picom &
+xsetroot -cursor_name left_ptr &
 setxkbmap -option grp:alt_shift_toggle us,ru,ua
 
 bspc monitor -d 1 2 3 4
