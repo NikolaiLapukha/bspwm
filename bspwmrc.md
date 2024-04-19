@@ -2,6 +2,8 @@
 
 pgrep -x sxhkd > /dev/null || sxhkd &
 polybar example &
+nitrogen --restore &
+dunst &
 picom &
 setxkbmap -option grp:alt_shift_toggle us,ru,ua
 
