@@ -14,17 +14,17 @@ super + d
 super + Escape
 	pkill -USR1 -x sxhkd
 
-super + Print
+Print
 	flameshot gui
 
 XF86MonBrightness{Up,Down}
-	brightnessctl s 5%{+,-} &
+	brightnessctl s 5%{+,-} & notify-send 'Brightness' -t 700
 
 XF86AudioRaiseVolume
-	pactl set-sink-volume 0 +5%
+	pactl set-sink-volume 0 +5%; notify-send 'Volume +5%' -t 700
 
 XF86AudioLowerVolume
-	pactl set-sink-volume 0 -5%
+	pactl set-sink-volume 0 -5%; notify-send 'Volume -5%' -t 700
 
 #
 # bspwm hotkeys
