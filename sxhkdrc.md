@@ -26,6 +26,9 @@ XF86AudioRaiseVolume
 XF86AudioLowerVolume
 	pactl set-sink-volume 0 -5%; notify-send 'Volume -5%' -t 700
 
+XF86AudioMute
+    pactl set-sink-mute 0 toggle
+
 #
 # bspwm hotkeys
 #
