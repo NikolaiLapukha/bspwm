@@ -6,13 +6,16 @@
 super + Return
 	kitty
 
+super + p
+	/usr/bin/powermenu.sh
+
 # program launcher
 super + d
 	rofi -show drun -icon-theme "Papirus" -show-icons
 
 # make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'Reload config' -t 1000
 
 Print
 	flameshot gui
@@ -21,14 +24,13 @@ XF86MonBrightness{Up,Down}
 	brightnessctl s 5%{+,-} & notify-send 'Brightness' -t 700
 
 XF86AudioRaiseVolume
-	pactl set-sink-volume 0 +5%; notify-send 'Volume +5%' -t 700
+	pactl set-sink-volume 0 +5%;volume=$(pamixer --get-volume); dunstify "Volume $volume%" -i audio-volume-high-symbolic -t 700
 
 XF86AudioLowerVolume
-	pactl set-sink-volume 0 -5%; notify-send 'Volume -5%' -t 700
+	pactl set-sink-volume 0 -5%; volume=$(pamixer --get-volume); dunstify "Volume $volume%" -i audio-volume-low-symbolic -t 700
 
 XF86AudioMute
-    pactl set-sink-mute 0 toggle
-
+	pactl set-sink-mute 0 toggle; dunstify "Mute" -i audio-volume-muted-symbolic -t 700
 #
 # bspwm hotkeys
 #
