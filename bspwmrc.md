@@ -24,5 +24,6 @@ bspc config focused_border_color "#8fbcbb"
 bspc rule -a TelegramDesktop state=floating
 bspc rule -a Galculator state=floating
 bspc rule -a Viewnior state=floating
+bspc rule -a Pavucontrol state=floating
 #bspc rule -a Kupfer.py focus=on Viewnior
 #bspc rule -a Screenkey manage=off
